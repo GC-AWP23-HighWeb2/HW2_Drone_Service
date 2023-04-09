@@ -5,21 +5,17 @@ import {
   FormControl,
   FormLabel,
   Heading,
-  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
-  Link,
   Stack,
   Textarea,
-  Tooltip,
   useClipboard,
   VStack,
   Select
 } from "@chakra-ui/react";
 import React from "react";
-import { BsGithub, BsInstagram, BsPerson, BsTwitter } from "react-icons/bs";
-import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import { MdOutlineEmail, MdOutlinePhone } from "react-icons/md";
 import { useFormik } from "formik";
 import { useState } from "react";
 
@@ -30,7 +26,7 @@ import validationSchema from "./validations";
 function Contact() {
   const { hasCopied, onCopy } = useClipboard("edizkeskin@gmail.com");
 
-  const droneList = ["model1","modle2","model3"];
+  const droneList = ["Model1","Model2","Model3"];
   const colorList = ["Black","White","Blue","Red","Green"];
 
   const [selectedmodel,setSelectedModel] = useState();
@@ -52,6 +48,7 @@ function Contact() {
     initialValues: {
       name: "",
       email: "",
+      phone: "",
       message: "",
     },
     validationSchema,
@@ -110,11 +107,10 @@ function Contact() {
                 shadow="base"
               >
                 <form onSubmit={formik.handleSubmit}>
-                  <VStack spacing={5}>
+                  <VStack spacing={3}>
                     <FormControl isRequired>
                       <FormLabel>Model</FormLabel>
                       <InputGroup>
-                        <InputLeftElement children={<BsPerson />} />
                         <Select placeholder='Select Model' onChange={handleModelChange} value={selectedmodel}>
                           {droneList.map((item) => (
                               <option value={item} key={item}>
@@ -128,7 +124,6 @@ function Contact() {
                     <FormControl isRequired>
                       <FormLabel>Color</FormLabel>
                       <InputGroup>
-                        <InputLeftElement children={<BsPerson />} />
                         <Select placeholder='Select Color' onChange={handleColorChange} value={selectedcolor}>
                           {colorList.map((item) => (
                               <option value={item} key={item}>
@@ -153,6 +148,23 @@ function Contact() {
                             formik.touched.email && formik.errors.email
                           }
                           placeholder="Your Email"
+                        />
+                      </InputGroup>
+                    </FormControl>
+                    <FormControl isRequired>
+                      <FormLabel>Phone</FormLabel>
+                      <InputGroup>
+                        <InputLeftElement children={<MdOutlinePhone />} />
+                        <Input
+                          type="phone"
+                          name="phone"
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          value={formik.values.phone}
+                          isInvalid={
+                            formik.touched.phone && formik.errors.phone
+                          }
+                          placeholder="Your Phone Number"
                         />
                       </InputGroup>
                     </FormControl>
