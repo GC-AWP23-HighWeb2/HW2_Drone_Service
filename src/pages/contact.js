@@ -15,17 +15,38 @@ import {
   Tooltip,
   useClipboard,
   VStack,
+  Select
 } from "@chakra-ui/react";
 import React from "react";
 import { BsGithub, BsInstagram, BsPerson, BsTwitter } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
 import { useFormik } from "formik";
+import { useState } from "react";
+
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import validationSchema from "./validations";
 
 function Contact() {
   const { hasCopied, onCopy } = useClipboard("edizkeskin@gmail.com");
+
+  const droneList = ["model1","modle2","model3"];
+  const colorList = ["Black","White","Blue","Red","Green"];
+
+  const [selectedmodel,setSelectedModel] = useState();
+  const [selectedcolor,setSelectedColor] = useState("Black");
+
+
+
+  const handleModelChange=(e)=>{
+    setSelectedModel(e.target.value);
+  }
+  const handleColorChange=(e)=>{
+    setSelectedColor(e.target.value);
+    console.log(selectedcolor);
+  }
+
+  
 
   const formik = useFormik({
     initialValues: {
@@ -79,133 +100,47 @@ function Contact() {
               spacing={{ base: 4, md: 8, lg: 6 }}
               direction={{ base: "column", md: "row" }}
             >
-              <Stack
-                align="center"
-                justify="space-around"
-                direction={{ base: "row", md: "column" }}
-                data-aos="zoom-in-down"
-                color="white"
-              >
-                <Tooltip
-                  label={hasCopied ? "Email Copied!" : "Copy Email"}
-                  closeOnClick={false}
-                  hasArrow
-                >
-                  <IconButton
-                    aria-label="email"
-                    variant="ghost"
-                    size="lg"
-                    fontSize="3xl"
-                    icon={<MdEmail />}
-                    _hover={{
-                      bg: "blue.500",
-                      color: "gray.700",
-                    }}
-                    onClick={onCopy}
-                    isRound
-                  />
-                </Tooltip>
-                <Tooltip
-                  hasArrow
-                  label="Github"
-                  bg="gray.300"
-                  color="black"
-                  borderRadius={"md"}
-                >
-                  <Link href="https://github.com/EdizKeskin" target={"_blank"}>
-                    <IconButton
-                      aria-label="github"
-                      variant="ghost"
-                      size="lg"
-                      fontSize="3xl"
-                      icon={<BsGithub />}
-                      _hover={{
-                        bg: "blue.500",
-                        color: "gray.700",
-                      }}
-                      isRound
-                    />
-                  </Link>
-                </Tooltip>
-                <Tooltip
-                  hasArrow
-                  label="Instagram"
-                  bg="gray.300"
-                  color="black"
-                  borderRadius={"md"}
-                >
-                  <Link
-                    href="https://www.instagram.com/sharpness_4/"
-                    target={"_blank"}
-                  >
-                    <IconButton
-                      aria-label="linkedin"
-                      variant="ghost"
-                      size="lg"
-                      icon={<BsInstagram size="28px" />}
-                      _hover={{
-                        bg: "blue.500",
-                        color: "gray.700",
-                      }}
-                      isRound
-                    />
-                  </Link>
-                </Tooltip>
-                <Tooltip
-                  hasArrow
-                  label="Twitter"
-                  bg="gray.300"
-                  color="black"
-                  borderRadius={"md"}
-                >
-                  <Link
-                    href="https://twitter.com/sharpness_4"
-                    target={"_blank"}
-                  >
-                    <IconButton
-                      aria-label="twitter"
-                      variant="ghost"
-                      size="lg"
-                      icon={<BsTwitter size="28px" />}
-                      _hover={{
-                        bg: "blue.500",
-                        color: "gray.700",
-                      }}
-                      isRound
-                    />
-                  </Link>
-                </Tooltip>
-              </Stack>
+              
               <Box
-                bg="gray.700"
+                bg={selectedcolor}
                 borderRadius="lg"
                 p={8}
                 width={{ base: "", md: "400px" }}
-                color="whiteAlpha.900"
+                color={selectedcolor=="White"? "black":"whiteAlpha.900"}
                 shadow="base"
-                data-aos="zoom-in-up"
               >
                 <form onSubmit={formik.handleSubmit}>
                   <VStack spacing={5}>
                     <FormControl isRequired>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>Model</FormLabel>
                       <InputGroup>
                         <InputLeftElement children={<BsPerson />} />
-                        <Input
-                          type="text"
-                          name="name"
-                          placeholder="Your Name"
-                          onChange={formik.handleChange}
-                          onBlur={formik.handleBlur}
-                          value={formik.values.name}
-                          isInvalid={formik.touched.name && formik.errors.name}
-                        />
+                        <Select placeholder='Select Model' onChange={handleModelChange} value={selectedmodel}>
+                          {droneList.map((item) => (
+                              <option value={item} key={item}>
+                              {item}
+                              </option>
+                          ))}
+                        </Select>
+                      </InputGroup>
+                    </FormControl>
+
+                    <FormControl isRequired>
+                      <FormLabel>Color</FormLabel>
+                      <InputGroup>
+                        <InputLeftElement children={<BsPerson />} />
+                        <Select placeholder='Select Color' onChange={handleColorChange} value={selectedcolor}>
+                          {colorList.map((item) => (
+                              <option value={item} key={item}>
+                              {item}
+                              </option>
+                          ))}
+                        </Select>
                       </InputGroup>
                     </FormControl>
 
                     <FormControl isRequired>
                       <FormLabel>Email</FormLabel>
-
                       <InputGroup>
                         <InputLeftElement children={<MdOutlineEmail />} />
                         <Input

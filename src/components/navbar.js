@@ -106,7 +106,7 @@ function Navbar() {
           justifyContent="center"
         >
           <Heading as={"h1"} fontSize="xl">
-            Sharpness
+            MENU
           </Heading>
           <Flex display={{ base: "none", sm: "flex" }} ml={10}>
             <DesktopNav />

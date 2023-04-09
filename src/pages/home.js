@@ -124,7 +124,7 @@ function Home() {
               textAlign={"center"}
             >
               <Text mb={"2"} color="white">
-                I'm
+                We're
                 <Text
                   as={"span"}
                   position={"relative"}
@@ -141,7 +141,7 @@ function Home() {
                     zIndex: -1,
                   }}
                 >
-                  Ediz Keskin
+                  High Web 2
                 </Text>
               </Text>
               <Text fontSize={{base:"2xl", sm: "4xl", lg: "6xl" }} as={"span"} color={"red.400"}>
@@ -154,11 +154,11 @@ function Home() {
                   onInit={(typewriter) => {
                     typewriter
                       .pauseFor(120)
-                      .typeString("<span>Junior Frontend Developer<span>")
+                      .typeString("<span>We provide<span>")
                       .pauseFor(600)
                       .deleteAll()
                       .pauseFor(600)
-                      .typeString("<span>Learning Reactjs<span>")
+                      .typeString("<span>Drone Service<span>")
                       .pauseFor(600)
                       .start();
                   }}
@@ -166,101 +166,7 @@ function Home() {
               </Text>
             </Heading>
           </Box>
-          <Stack alignItems={"center"}>
-            <Box
-              display={"flex"}
-              flexDirection={"row"}
-              alignItems={"center"}
-              justifyContent="center"
-              backdropFilter={"blur(2px)"}
-              p={3}
-              mt={10}
-              borderRadius={"md"}
-            >
-              <Tooltip
-                hasArrow
-                label="Github"
-                bg="gray.300"
-                color="black"
-                borderRadius={"md"}
-              >
-                <Text
-                  as={"a"}
-                  href={"https://github.com/EdizKeskin"}
-                  mr="6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color={textColor}
-                  _hover={{ color: "yellow.300" }}
-                  transition="all 0.3s"
-                >
-                  <FaGithub size={"30px"} color="white" />
-                </Text>
-              </Tooltip>
-
-              <Tooltip
-                hasArrow
-                label="Instagram"
-                bg="gray.300"
-                color="black"
-                borderRadius={"md"}
-              >
-                <Text
-                  as={"a"}
-                  href={"https://www.instagram.com/sharpness_4/"}
-                  mr="6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color={textColor}
-                  _hover={{ color: "yellow.300" }}
-                  transition="all 0.3s"
-                >
-                  <FaInstagram size={"30px"} color="white" />
-                </Text>
-              </Tooltip>
-
-              <Tooltip
-                hasArrow
-                label="Steam"
-                bg="gray.300"
-                color="black"
-                borderRadius={"md"}
-              >
-                <Text
-                  as={"a"}
-                  href={"https://steamcommunity.com/id/sharpness4"}
-                  mr="6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color={textColor}
-                  _hover={{ color: "yellow.300" }}
-                  transition="all 0.3s"
-                >
-                  <FaSteam size={"30px"} color="white" />
-                </Text>
-              </Tooltip>
-
-              <Tooltip
-                hasArrow
-                label="Twitter"
-                bg="gray.300"
-                color="black"
-                borderRadius={"md"}
-              >
-                <Text
-                  as={"a"}
-                  href={"https://twitter.com/EdizKeskin_"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color={textColor}
-                  _hover={{ color: "yellow.300" }}
-                  transition="all 0.3s"
-                >
-                  <FaTwitter size={"30px"} color="white" />
-                </Text>
-              </Tooltip>
-            </Box>
-          </Stack>
+          
           <Stack
             pt={"20"}
             justifyContent="center"
