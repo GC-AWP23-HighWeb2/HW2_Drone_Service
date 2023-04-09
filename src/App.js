@@ -13,7 +13,7 @@ import Projects from "./pages/projects";
 
 function App() {
   useEffect(() => {
-    AOS.init({
+    AOS.init({//AOS : 스크롤로 제어하는 라이브러리
       duration: 1200,
       easing: "ease",
     });
@@ -29,7 +29,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </div>
-      <Particles
+      <Particles 
         id="tsparticles"
         className="bg"
         options={{

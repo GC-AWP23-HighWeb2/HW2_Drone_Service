@@ -20,17 +20,11 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import {
-  FaInstagram,
-  FaSteam,
-  FaTwitter,
   FaGithub,
-  FaReact,
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
+  FaMarker,
 } from "react-icons/fa";
 import Typewriter from "typewriter-effect";
-import { AiOutlineDoubleRight } from "react-icons/ai";
+import { AiFillMail, AiFillRocket, AiOutlineDoubleRight, AiOutlineMail } from "react-icons/ai";
 import ProgressBar from "react-animated-progress-bar";
 
 import Model from "../components/drone";
@@ -50,28 +44,32 @@ function Home() {
 
   const skills = [
     {
-      name: "HTML",
-      value: "90",
-      icon: <FaHtml5 size="1.5em" />,
+      num: "202133829",
+      name: "Noh Hyunwoo",
+      value: "25",
+      icon: <FaGithub size="2em" />,
+      github: "https://github.com/tomhyunwoo"
     },
     {
-      name: "CSS",
-      value: "70",
-      icon: <FaCss3Alt size="1.5em" />,
+      num: "201935066",
+      name: "Song yunsu",
+      value: "25",
+      icon: <FaGithub size="2em" />,
+      github: "https://github.com/HBKVN",
     },
     {
-      name: "JavaScript",
-      value: "70",
-      icon: <FaJs size="1.5em" />,
+      num: "201835498",
+      name: "Lee JungHoon",
+      value: "25",
+      icon: <FaGithub size="2em" />,
+      github: "https://github.com/LEEJUNGHOOON",
     },
     {
-      name: "React",
-      value: "75",
-      icon: <FaReact size="1.5em" />,
-    },
-    {
-      name: "RPG GAMES",
-      value: "100",
+      num: "202135593",
+      name: "Jaedeok \"Michael\" Han",
+      value: "25",
+      icon: <FaGithub size="2em" />,
+      github: "https://github.com/thxto-me",
     },
   ];
   return (
@@ -168,14 +166,13 @@ function Home() {
               </Text>
             </Heading>
           </Box>
-          
           <Stack
             pt={"20"}
             justifyContent="center"
             direction="row"
             display={{ base: "none", md: "flex" }}
           >
-            <Link href="#skills">
+            <Link href="#about">
               <Button
                 variant={"outline"}
                 backdropFilter={"blur(2px)"}
@@ -197,8 +194,7 @@ function Home() {
           textAlign={"center"}
           data-aos="zoom-in-up"
         >
-          Hello my name is Ediz Keskin. I&apos;m 17 years old. I want to be Full
-          stack developer in the future.
+          We are HighWeb2<br />Advanced Web Programming (14856_001), Spring 2023
         </Text>
         <Stack
           spacing={{ base: 4, sm: 6 }}
@@ -211,25 +207,25 @@ function Home() {
             backdropFilter={"blur(2px)"}
             data-aos="zoom-in-up"
           >
-            <Heading as={"h2"} color={"red.400"}>
-              Favorite activities
+            <Heading as={"h2"} color={"yellow.400"}>
+              What We Sell
             </Heading>
             <List spacing={3} color="white">
               <ListItem>
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Playing video games
+                <ListIcon as={AiOutlineDoubleRight} color="red.500" />
+                Amazing SLAM Solution
               </ListItem>
               <ListItem>
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Reading book
+                Quadcopters
               </ListItem>
               <ListItem>
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Learning something new
+                <ListIcon as={AiOutlineDoubleRight} color="white.500" />
+                LiDAR Sensor
               </ListItem>
               <ListItem>
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Love chit chat with my friends
+                <ListIcon as={AiOutlineDoubleRight} color="yellow.500" />
+                Import <a href="https://www.dji.com/kr">DJI</a>, <a href="http://www.symatoys.net/">SYMA</a> Drones 
               </ListItem>
             </List>
           </VStack>
@@ -240,36 +236,58 @@ function Home() {
             data-aos="zoom-in-up"
           >
             <Heading as={"h2"} color={"red.400"}>
-              Favorite Movies and Series
+              Our Info
             </Heading>
             <List spacing={3} color="white">
               <ListItem>
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Breaking Bad
+                <Tooltip
+                  hasArrow
+                  label="Github"
+                  bg="gray.300"
+                  color="black"
+                  borderRadius={"md"}
+                >
+                  <Text
+                    as={"a"}
+                    href={"https://github.com/GC-AWP23-HighWeb2"}
+                    mr="0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color={textColor}
+                    _hover={{ color: "yellow.300" }}
+                    transition="all 0.3s"
+                  >
+                    <FaGithub size={"30px"} color="white" />
+                  </Text>
+                </Tooltip>
               </ListItem>
               <ListItem>
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Daredevil
+                <ListIcon as={FaMarker} color="green.500" />
+                Advanced Web Programming (14856_001), Spring 2023
               </ListItem>
               <ListItem>
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Star Wars series
+                <ListIcon as={AiOutlineDoubleRight} color="yellow.500" />
+                Instructor: Prof. 최성자( <a href="mailto:artchoi0g@gachon.ac.kr"><ListIcon as={AiOutlineMail}/></a>)
               </ListItem>
               <ListItem>
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Leon The Professional
+                <ListIcon as={AiFillRocket} color="yellow.500" />
+                School of Computing, Gachon University
+              </ListItem>
+              <ListItem>
+                <ListIcon as={AiFillMail} color="white.500" />
+                <a href="mailto:hjd0907@gachon.ac.kr" type="email">Send email</a>
               </ListItem>
             </List>
           </VStack>
         </Stack>
         <Heading
           as={"h2"}
-          color={"red.400"}
+          color={"blue.400"}
           backdropFilter={"blur(2px)"}
-          id="skills"
+          id="about"
           data-aos="zoom-in-up"
         >
-          Skills
+          Our Team
         </Heading>
         <Grid
           templateColumns={{
@@ -293,21 +311,31 @@ function Home() {
               color="white"
             >
               <Box display={"flex"} flexDirection="row" mr={"20px"}>
-                {skill.icon && (
-                  <IconButton
-                    aria-label="twitter"
-                    variant="ghost"
-                    size="lg"
-                    _hover={{
-                      bg: "transparent",
-                      cursor: "default",
-                    }}
-                    icon={skill.icon}
-                  />
-                )}
                 <Text fontSize={"2xl"} fontWeight="bold" variant="ghost">
                   {skill.name}
+                  {/* <a href={skill.github}>{skill.name}</a> */}
                 </Text>
+              </Box>
+              <Box display={"flex"} flexDirection="row" mr={"20px"}>
+                <Text fontSize={"xl"} fontWeight="bold" variant="ghost">
+                  {skill.num}
+                </Text>
+              </Box>
+              <Box display={"flex"} flexDirection="row" mr={"20px"}>
+                {skill.icon && (
+                  <a href={skill.github}>
+                    <IconButton
+                      aria-label="github"
+                      variant="ghost"
+                      size="lg"
+                      _hover={{
+                        bg: "transparent",
+                        cursor: "default",
+                      }}
+                      icon={skill.icon}
+                    />
+                  </a>
+                )}
               </Box>
               <ProgressBar
                 width={barSize}
