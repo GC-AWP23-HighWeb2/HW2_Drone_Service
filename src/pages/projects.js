@@ -115,18 +115,14 @@ function Projects() {
               <ListItem>
                 Usage:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                275 m/s
+                Survaillance
               </ListItem>
               <ListItem>
                 Number of Profalers:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                8
+                2
               </ListItem>
-              <ListItem>
-                Special note:
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                8
-              </ListItem>
+              
             </List>
       
             </Box>
@@ -144,12 +140,12 @@ function Projects() {
               width={500}
               height={500}
               pixelRatio={[1, 2]}
-              camera={{ position: [0, 0, -700], fov: fov }}
+              camera={{ position: [-3, 2, 15], fov: fov}}
             >
               <ambientLight intensity={0.6} />
               <directionalLight position={[-2, 5, 2]} />
               <Suspense fallback={null}>
-                <Model2 />
+                <Model />
                 <ContactShadows
                   rotation-x={Math.PI / 2}
                   position={[0, -0.8, 0]}
@@ -176,7 +172,7 @@ function Projects() {
             >
             
             <Heading as={"h2"} color={"red.400"} align="center">
-              Model1
+              Model2
             </Heading>
             <br></br>
             <br></br> 
@@ -184,33 +180,29 @@ function Projects() {
               <ListItem>
                 NAME: 
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Model1
+                Model2
               </ListItem>
               <ListItem>
                 Price:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                190$
+                150$
               </ListItem>
               <ListItem>
                 Speed:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                275 m/s
+                300 m/s
               </ListItem>
               <ListItem>
                 Usage:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                275 m/s
+                Deliver
               </ListItem>
               <ListItem>
                 Number of Profalers:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                8
+                4
               </ListItem>
-              <ListItem>
-                Special note:
-                <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                8
-              </ListItem>
+            
             </List>
       
             </Box>
@@ -268,32 +260,32 @@ function Projects() {
               <ListItem>
                 NAME: 
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                Model1
+                Model3
               </ListItem>
               <ListItem>
                 Price:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                190$
+                350$
               </ListItem>
               <ListItem>
                 Speed:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                275 m/s
+                400 m/s
               </ListItem>
               <ListItem>
                 Usage:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                275 m/s
+                Combat
               </ListItem>
               <ListItem>
                 Number of Profalers:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                8
+                2
               </ListItem>
               <ListItem>
                 Special note:
                 <ListIcon as={AiOutlineDoubleRight} color="green.500" />
-                THIS is Model3
+                You need special license to buy it.
               </ListItem>
             </List>
       
