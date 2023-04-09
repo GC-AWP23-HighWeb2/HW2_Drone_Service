@@ -87,7 +87,7 @@ function Contact() {
 
   return (
     <Flex align="center" justify="center" id="contact">
-      <Box borderRadius="lg" m={{ base: 5, md: 16, lg: 10 }}>
+      <Box borderRadius="lg" m={{ base: 5, md: 16, lg: 10 }} bg>
         <Box>
           <VStack spacing={{ base: 4, md: 8, lg: 10 }}>
             <Heading

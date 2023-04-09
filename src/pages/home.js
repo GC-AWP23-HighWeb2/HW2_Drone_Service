@@ -33,7 +33,9 @@ import Typewriter from "typewriter-effect";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 import ProgressBar from "react-animated-progress-bar";
 
-import Model from "../components/logo";
+import Model from "../components/drone";
+import Model2 from "../components/drone";
+
 import { Canvas } from "@react-three/fiber";
 import { Loader, OrbitControls, ContactShadows } from "@react-three/drei";
 
@@ -187,6 +189,7 @@ function Home() {
           </Stack>
         </Stack>
       </SimpleGrid>
+
       <Stack spacing={{ base: 6, md: 10 }} py={{ base: 16, md: 24 }}>
         <Text
           color={"gray.300"}
