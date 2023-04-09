@@ -1,8 +1,21 @@
-# Portfolio-Website
+# FrontEnd Dev.
+### Gachon University
+School of Computing Software Major<br />
+Advanced Web Programming (14856_001), Spring 2023<br/>
+Instructor: Prof. 최성자(artchoi0g@gachon.ac.kr)
 
-[Live Preview](https://edizkeskin.com/)
+---
+## Team HighWeb2
 
-[![Demo](./public/thumbnail.png)](https://edizkeskin.com/)
+- Dev
+  - Lee JungHoon (2018354983)
+  - Jaedeok "Michael" Han (202135593)
+- Preparation for the presentation
+  - Noh Hyunwoo (202133829)
+  - Song yunsu (201935066)
+
+---
+
 
 ## Stack
 
@@ -10,29 +23,10 @@
 - [Framer Motion](https://www.framer.com/motion/) and [Aos](https://michalsnik.github.io/aos/) - For animation
 - [Formik](https://formik.org/) and [Yup](https://www.npmjs.com/package/yup) - For form validation
 
----
-
-## Project structure
-
 ```
-$PROJECT_ROOT
-│   # Page files
-├── pages
-│   # React component files
-├── components
-│   # Static files for images
-└── public
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm install framer-motion
+npm install aos --save
+npm install formik --save
+npm i yup
 ```
----
-
-## License
-
-GPL-3.0 License.
-
-You can create your own homepage for free without notifying me by forking this project under the following conditions:
-
-- Add a link to [my homepage](https://edizkeskin.com.tr/)
-
-<br />
-
-Copyright 2022 Ediz Keskin
