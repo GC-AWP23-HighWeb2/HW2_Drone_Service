@@ -11,7 +11,6 @@ Instructor: Prof. 최성자(artchoi0g@gachon.ac.kr)
   - Lee JungHoon (2018354983)
   - Jaedeok "Michael" Han (202135593)
 - Preparation for the presentation
-  - Noh Hyunwoo (202133829)
   - Song yunsu (201935066)
 
 ---
